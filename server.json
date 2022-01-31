@@ -1,0 +1,298 @@
+{
+  "user": [
+    {
+      "id": "1001",
+      "email": "dev@devinhouse.com",
+      "password": "dev",
+      "name": "Maori"
+    }
+  ],
+  "units": [
+    {
+      "id": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "name": "Primeira",
+      "location": "Florianópolis",
+      "brand": "nike",
+      "model": "1101",
+      "active": true
+    },
+    {
+      "id": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "name": "Segunda",
+      "location": "Florianópolis",
+      "brand": "Tesla",
+      "model": "Nimbus 2000",
+      "active": false
+    },
+    {
+      "id": "6bdf9684-cf19-461f-b754-dc51e4eac960",
+      "name": "Terceira",
+      "location": "Curitiba",
+      "brand": "Nvidia",
+      "model": "GTX3090",
+      "active": true
+    },
+    {
+      "id": "3e3df415-98da-4789-b4e0-a13a6833b365",
+      "name": "Quarta",
+      "location": "São Paulo",
+      "brand": "Samsung",
+      "model": "Galaxy",
+      "active": true
+    }
+  ],
+  "generation": [
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "1",
+      "generation": "44",
+      "id": 1
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "2",
+      "generation": "56",
+      "id": 2
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "3",
+      "generation": "44",
+      "id": 3
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "4",
+      "generation": "41",
+      "id": 4
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "5",
+      "generation": "38",
+      "id": 5
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "6",
+      "generation": "37",
+      "id": 6
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "7",
+      "generation": "34",
+      "id": 7
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "8",
+      "generation": "43",
+      "id": 8
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "9",
+      "generation": "48",
+      "id": 9
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "10",
+      "generation": "56",
+      "id": 10
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "11",
+      "generation": "61",
+      "id": 11
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2021",
+      "month": "12",
+      "generation": "66",
+      "id": 12
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "1",
+      "generation": "68",
+      "id": 13
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "2",
+      "generation": "57",
+      "id": 14
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "3",
+      "generation": "51",
+      "id": 15
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "4",
+      "generation": "44",
+      "id": 16
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "5",
+      "generation": "41",
+      "id": 17
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "6",
+      "generation": "38",
+      "id": 18
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "7",
+      "generation": "31",
+      "id": 19
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "8",
+      "generation": "40",
+      "id": 20
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "9",
+      "generation": "47",
+      "id": 21
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "10",
+      "generation": "55",
+      "id": 22
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "11",
+      "generation": "60",
+      "id": 23
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2021",
+      "month": "12",
+      "generation": "71",
+      "id": 24
+    },
+    {
+      "unit": "1a4853b5-ecae-4597-b65a-937688b844da",
+      "year": "2022",
+      "month": "1",
+      "generation": "33",
+      "id": 25
+    },
+    {
+      "unit": "3e3df415-98da-4789-b4e0-a13a6833b365",
+      "year": "2022",
+      "month": "2",
+      "generation": "41",
+      "id": 26
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2020",
+      "month": "1",
+      "generation": "55",
+      "id": 27
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2020",
+      "month": "2",
+      "generation": "44",
+      "id": 28
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2020",
+      "month": "3",
+      "generation": "88",
+      "id": 29
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2020",
+      "month": "4",
+      "generation": "31",
+      "id": 30
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2020",
+      "month": "5",
+      "generation": "66",
+      "id": 31
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2020",
+      "month": "9",
+      "generation": "88",
+      "id": 32
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2020",
+      "month": "11",
+      "generation": "11",
+      "id": 33
+    },
+    {
+      "unit": "6bdf9684-cf19-461f-b754-dc51e4eac960",
+      "year": "2020",
+      "month": "10",
+      "generation": "33",
+      "id": 34
+    },
+    {
+      "unit": "6bdf9684-cf19-461f-b754-dc51e4eac960",
+      "year": "2020",
+      "month": "9",
+      "generation": "45",
+      "id": 35
+    },
+    {
+      "unit": "3e3df415-98da-4789-b4e0-a13a6833b365",
+      "year": "2022",
+      "month": "1",
+      "generation": "33",
+      "id": 36
+    }
+  ]
+}
