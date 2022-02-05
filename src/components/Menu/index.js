@@ -39,7 +39,7 @@ function Menu() {
 
     return (
         <MenuContainer>
-            <Logo width={'50%'}/>
+            <Link to={'/dashboard'} ><Logo width={'50%'}/></Link>
             <MenuList>
 
                 <Link to='/dashboard' style={{textDecoration:'none'}}>
@@ -52,7 +52,7 @@ function Menu() {
                 <Link to='/unidades' style={{textDecoration:'none'}}>
                     <MenuListItem actual={unitsColor}>
                         <FaSolarPanel />
-                        <MenuListItemText>Unidades Geradoras</MenuListItemText>
+                        <MenuListItemText>Unidades</MenuListItemText>
                     </MenuListItem>
                 </Link>
                 <Link to='/geracoes' style={{textDecoration:'none'}}>

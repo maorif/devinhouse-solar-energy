@@ -4,8 +4,6 @@ export const CardContainer = styled.div`
     width: 100%;
     height: 20%;
 
-    /* border: 1px solid black; */
-
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -13,13 +11,18 @@ export const CardContainer = styled.div`
     align-content: center;
     gap: 25px;
 
+    @media only screen and (max-width: 600px) {
+        margin-top: 5vw;
+    };
+
 `;
 
 export const Card = styled.div`
     width: 15%;
-    height: 65%;
+    height: 75%;
 
     border-radius: 10px;
+    border: 1px solid lightgray;
 
     display: flex;
     flex-flow: column;
@@ -29,19 +32,47 @@ export const Card = styled.div`
     background-color: #ffff;
 
     &:hover {
-        color: blue;
         cursor: pointer;
-        border: 1px solid blue;
-    }
+        border-color: blue;
+        color: blue;
+    };
+
+    @media only screen and (max-width: 900px) {
+        height: 30%;
+        width: 30%;
+    };
+
+    @media only screen and (max-width: 600px) {
+        height: 40%;
+        width: 30%;
+    };
 `;
 
-export const CardTitle = styled.h3`   
+export const CardTitle = styled.h3` 
+    text-align: center;
+    font-size: 1vw;
+
+    @media only screen and (max-width: 900px) {
+        font-size: 1.5vw;
+    };
+
+    @media only screen and (max-width: 600px) {
+        font-size: 2vw;
+    };
 `;
 
 export const CardData = styled.p`
-
-    font-size: 32px;
+    display: flex;
+    font-size: 1.5vw;
     font-weight: bold;
+
+    @media only screen and (max-width: 900px) {
+        font-size: 2.2vw;
+    };
+
+    @media only screen and (max-width: 600px) {
+        font-size: 3vw;
+    };
 `;
 
 export const GraphContainer = styled.div`
@@ -58,7 +89,6 @@ export const GraphContainer = styled.div`
     padding: 20px;
 
     background-color: #ffff;
-
 `;
 
 export const GraphTitle = styled.h2`
@@ -80,16 +110,21 @@ export const CardYearContainer = styled.div`
 export const CardYear = styled.div`
 
     width: 20%;
-
+    font-size: auto;
     text-align: center;
-
-    border: 1px solid black;
+    border: 1px solid;
+    border-color: ${(props) => props.selected ? 'blue' : 'gray'};
+    color: ${(props) => props.selected ? 'blue' : 'gray'};
 
     border-radius: 5px;
 
     &:hover {
         cursor: pointer;
-        border: 1px solid blue;
+        border-color: blue;
         color: blue;
-    }
+    };
+
+    @media only screen and (max-width: 600px) {
+        font-size: 3vw;
+    };
 `;

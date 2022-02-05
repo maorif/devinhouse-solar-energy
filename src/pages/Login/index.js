@@ -6,9 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 import Input from "../../components/Input";
 import LoginButton from "../../components/LoginButton";
-import Logo from "../../components/Logo";
 
-import { Greet, LoginForm, LoginFormContainer, LoginImage } from "./styles";
+import { Greet, LoginForm, LoginFormContainer, LoginImage, LogoForLogin } from "./styles";
 
 function Login() {
 
@@ -61,7 +60,7 @@ function Login() {
 
             <LoginFormContainer>
 
-                <Logo width={'40%'} />
+                <LogoForLogin src={require('../../assets/images/logo.png')} />
                 <Greet>Bem vindo</Greet>
                 
                 <LoginForm onSubmit={handleSubmit}>

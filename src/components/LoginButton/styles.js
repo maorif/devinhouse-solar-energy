@@ -10,5 +10,4 @@ export const LButton = styled.button`
     border-radius: 5px;
     font-weight: bold;
     font-size: 18px;
-    
 `;

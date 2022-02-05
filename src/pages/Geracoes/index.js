@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+
 import toast, { Toaster } from "react-hot-toast";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -11,7 +12,7 @@ import Input from "../../components/Input";
 import Button from "../../components/Button";
 import Select from "../../components/Select";
 
-function Geracao() {
+function Geracoes() {
 
     const [unitData, setUnitData] = useState([]);
     const [optionUnit, setOptionUnit] = useState('');
@@ -105,18 +106,9 @@ function Geracao() {
                     <DatePicker
                         selected={date}
                         onChange={(date) => getDate(date)}
-                        // placeholderText="YYYY/MM"
                         className="date-picker"
                         dateFormat="MMMM-yyyy"
                         showMonthYearPicker />
-
-                    {/* <Input 
-                        label={'Mês/ano'} 
-                        type='month'
-                        value={date}
-                        onChange={(event) => setDate(event.target.value)}
-                        error={errors.date}
-                        errorText={'Selecione uma data.'}/> */}
 
                     <Input 
                         label={'Total KW gerados'}
@@ -140,4 +132,4 @@ function Geracao() {
     );
 };
 
-export default Geracao;
+export default Geracoes;

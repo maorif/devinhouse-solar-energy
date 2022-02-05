@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
+import toast, { Toaster } from 'react-hot-toast';
+
 import Button from "../../components/Button";
 import Checkbox from "../../components/Checkbox";
 import DefaultContainer from "../../components/DefaultContainer";
@@ -7,8 +10,10 @@ import Form from "../../components/Form";
 import Input from "../../components/Input";
 import PageContentContainer from "../../components/PageContentContainer";
 import PageTitle from "../../components/PageTitle";
+
 import { NewUnitTitle } from "./styles";
-import toast, { Toaster } from 'react-hot-toast';
+
+
 
 function CadastroUnidade() {
     
@@ -27,22 +32,28 @@ function CadastroUnidade() {
 
     useEffect(() => {
         
-        if(params.id !== 'nova'){
+        try{
+            if(params.id !== 'nova'){
 
-            async function handleGetUnit() {
+                async function handleGetUnit() {
 
-                const response = await fetch(`http://localhost:3333/units/${params.id}`);
-                const data = await response.json();
+                    const response = await fetch(`http://localhost:3333/units/${params.id}`);
+                    const data = await response.json();
 
-                setName(data.name);
-                setLocation(data.location);
-                setBrand(data.brand);
-                setModel(data.model);
-                setActive(data.active);
+                    setName(data.name);
+                    setLocation(data.location);
+                    setBrand(data.brand);
+                    setModel(data.model);
+                    setActive(data.active);
+                };
+
+                handleGetUnit();
             };
+        }
 
-            handleGetUnit();
-        };
+        catch {
+            toast.error('Falha ao carregar dados da unidade.')
+        }
 
     }, [params.id]);
 
@@ -82,19 +93,19 @@ function CadastroUnidade() {
                     },
                 )
                 
-                setErrors({})
+                setErrors({});
                 toast.success('Nova uniade cadastrada com sucesso!');
                 setTimeout(() => {
                     navigate('/unidades');
-                }, 2500); 
+                }, 2500);
 
-            } catch (error) {
+            } catch {
 
                 toast.error('Falha ao cadastrar nova unidade.')
             };
         };
     };
-
+    
     async function handleEditUnit(event) {
 
         event.preventDefault();
@@ -136,13 +147,13 @@ function CadastroUnidade() {
                     navigate('/unidades');
                 }, 2500); 
                 
-            } catch (error) {
+            } catch {
             
                 toast.error('Falha ao salvar.')
             };
         };    
     };
-
+    
     return (
 
         <DefaultContainer>

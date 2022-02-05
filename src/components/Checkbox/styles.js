@@ -14,7 +14,6 @@ export const CheckBoxLabel = styled.label`
     font-size: 16px;
     color: gray;
     padding-left: 2px;
-
 `;
 
 export const InputCheckbox = styled.input`

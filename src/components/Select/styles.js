@@ -5,6 +5,10 @@ export const SelectContainer = styled.div`
     display: flex;
     flex-flow: column;
     gap: 10px;
+
+    @media only screen and (max-width: 600px) {
+        width: 157px;
+    };
 `;
 
 export const SelectLabel = styled.label`

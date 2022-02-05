@@ -7,5 +7,4 @@ export const DContainer = styled.div`
     flex-flow: column;
     gap: 0;
     justify-content: top;
-
 `;

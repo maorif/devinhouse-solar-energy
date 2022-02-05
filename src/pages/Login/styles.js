@@ -14,6 +14,11 @@ export const LoginContainer = styled.div`
 export const LoginImage = styled.img`
     width: 50%;
     height: 100vh;
+
+    @media only screen and (max-width: 1000px) {
+        display: none;
+    };
+
 `;
 
 export const LoginFormContainer = styled.div`
@@ -24,8 +29,8 @@ export const LoginFormContainer = styled.div`
     gap: 20px;
     justify-content: center;
     align-items: center;
+`;
 
-`
 export const LoginForm = styled.form`
     width: 70%;
     padding-top: 20px;
@@ -35,11 +40,13 @@ export const LoginForm = styled.form`
     justify-content: center;
     align-items: center;
     row-gap: 18px;
-
-    /* border: 1px solid black; */
-`
+`;
 
 export const Greet = styled.h1`
     color: gray;
-    font-size: 24px;
-`
+    font-size: 3vw;
+`;
+
+export const LogoForLogin = styled.img`
+    width: 20vw;
+`;

@@ -6,7 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Menu from './components/Menu';
 import DefaultAppContainer from './components/DefaultAppContainer';
 import Unidades from './pages/Unidades';
-import Balance from './pages/Geracao';
+import Geracoes from './pages/Geracoes';
 import CadastroUnidade from './pages/CadastroUnidade';
 
 function App() {
@@ -16,21 +16,20 @@ function App() {
   return (
     
     <DefaultAppContainer>
-
+  
         {location.pathname != "/" && <Menu />}{/* Only show menu if is not login page */ }
-
+  
         <Routes>
-
+  
           <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/unidades" element={<Unidades />} />
           <Route path="/cadastro-unidade/:id" element={<CadastroUnidade />} />
-          <Route path="/geracoes" element={<Balance />} />
-
+          <Route path="/geracoes" element={<Geracoes />} />
+  
         </Routes>
-
+  
     </DefaultAppContainer>
-    
 
   );
 }

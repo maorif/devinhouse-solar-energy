@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 import DefaultContainer from "../../components/DefaultContainer";
 import PageContentContainer from "../../components/PageContentContainer";
@@ -16,9 +17,8 @@ import {
     Tooltip,
     Legend,
   } from 'chart.js';
-  import { Line } from 'react-chartjs-2';
 
-
+import { Line } from 'react-chartjs-2';
 
 function Dashboard() {
 
@@ -27,58 +27,76 @@ function Dashboard() {
     const [inactiveUnits, setInactiveUnits] = useState([]);
     const [meanEnergy, setMeanEnergy] = useState('');
     const months = ['Jan', 'Fev', 'Mar', 'Abr', "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];
-    const [year, setYear] = useState('2021');
     const [monthlyGen, setMonthlyGen] = useState([]);
+    const year = new Date().getFullYear();
+    const [selectedYear, setSelectedYear] = useState(year);
+    
 
     useEffect(() => {
+
         async function handleGetUnits() {
 
-            await fetch(`http://localhost:3333/units`)
-                .then(response => response.json())
-                .then(data => {
-                    setUnitsData(data);
-                    setActiveUnits(data.filter(unit => unit.active === true));
-                    setInactiveUnits(data.filter(unit => unit.active === false));
-                });
+            try{
+                await fetch(`http://localhost:3333/units`)
+                    .then(response => response.json())
+                    .then(data => {
+
+                        setUnitsData(data);
+                        setActiveUnits(data.filter(unit => unit.active === true));
+                        setInactiveUnits(data.filter(unit => unit.active === false));
+                    })
+                }
+            
+            catch {
+                toast.error('Falha ao carregar dados.');
+            }
         };
 
         async function handleGetData() {
-            await fetch(`http://localhost:3333/generation`)
-                .then(response => response.json())
-                    .then(data => {
-                    
-                        setMeanEnergy(data
-                            .map(gen => gen['generation'])
-                            .reduce((a, b) => parseFloat(a) + parseFloat(b)));
+            
+            try{
+                await fetch(`http://localhost:3333/generation`)
+                    .then(response => response.json())
+                        .then(data => {
 
-                        let totalMonthGen = [];
-                        for(let i=0; i<12; i++){
-                            let currentMonthGen = data
-                                .filter((gen) => (gen['year'] === year && Number(gen['month']) === i+1))
-                            
-                            if(currentMonthGen.length > 0){
-                                currentMonthGen = currentMonthGen
-                                    .map(gen => gen['generation'])
-                                    .reduce((a, b) => parseFloat(a) + parseFloat(b));
-                                totalMonthGen = [...totalMonthGen, currentMonthGen];
-                            }
-                                
-                            else{
-                                totalMonthGen = [...totalMonthGen, 0];
-                            }
-                            
-                        
-                        };
+                            // média de energia gerada
+                            let genData = data.map((gen) => (gen['generation'] && gen['generation']));
+                            setMeanEnergy((genData.reduce((a, b) => parseFloat(a) + parseFloat(b)) / genData.length).toFixed(2));
 
-                        setMonthlyGen(totalMonthGen);
-                        
-                    });
+                            // dados de energia do ano selecionado 
+                            let totalMonthGen = [];
+                            for(let i=0; i<12; i++){
+                                let currentMonthGen = data
+                                    .filter((gen) => (gen['year'] === `${selectedYear}` & Number(gen['month']) === i+1))
+
+                                if(currentMonthGen.length > 0){
+                                    currentMonthGen = currentMonthGen
+                                        .map(gen => gen['generation'])
+                                        .reduce((a, b) => parseFloat(a) + parseFloat(b));
+                                    totalMonthGen = [...totalMonthGen, currentMonthGen];
+                                }
+
+                                else{
+                                    totalMonthGen = [...totalMonthGen, 0];
+                                }
+
+                            };
+
+                            setMonthlyGen(totalMonthGen);
+                            
+
+                        });
+            }
+
+            catch {
+                toast.error('Falha ao carregar dados.');
+            }
         };
 
         handleGetUnits();
         handleGetData();
 
-    }, [year]);
+    }, [selectedYear]);
 
     ChartJS.register(
         CategoryScale,
@@ -103,13 +121,14 @@ function Dashboard() {
         labels: months,
         datasets: [
             {
-                label: year,
+                label: selectedYear,
                 data: monthlyGen,
                 borderColor: 'rgb(52, 146, 235)',
                 backgroundColor: 'rgba(52, 146, 235, 0.5)',
             },
         ],
       };
+
     
     return (
         
@@ -129,9 +148,12 @@ function Dashboard() {
                         <GraphTitle>Energia Total Gerada por Mês</GraphTitle>
 
                         <CardYearContainer>
-                            <CardYear onClick={() => setYear('2020')}>2020</CardYear>
-                            <CardYear onClick={() => setYear('2021')}>2021</CardYear>
-                            <CardYear onClick={() => setYear('2022')}>2022</CardYear>
+                            <CardYear 
+                                onClick={() => setSelectedYear(year - 2)}>{year-2}</CardYear>
+                            <CardYear  
+                                onClick={() => setSelectedYear(year - 1)}>{year-1}</CardYear>
+                            <CardYear 
+                                onClick={() => setSelectedYear(year)}>{year}</CardYear>
                         </CardYearContainer>
                         
                         <Line 
@@ -140,7 +162,7 @@ function Dashboard() {
                             />
                     </GraphContainer>
                 
-                
+                <Toaster />
             </PageContentContainer>
         </DefaultContainer>
         

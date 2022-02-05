@@ -8,5 +8,4 @@ function Logo({...otherProps}) {
         src={require('../../assets/images/logo.png')}/>
 };
 
-
 export default Logo;

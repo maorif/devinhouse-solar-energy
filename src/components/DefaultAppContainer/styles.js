@@ -5,8 +5,7 @@ export const AppContainer = styled.div`
     flex-flow: row;
     gap: 0;
     height: 100vh;
-    justify-content: left;
+    justify-content: space-around;
     align-items: center;
-
 `;
 

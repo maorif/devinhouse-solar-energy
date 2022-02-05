@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+
 import { Link } from "react-router-dom";
+
 import toast, { Toaster } from "react-hot-toast";
 
 import Button from "../../components/Button";
@@ -13,7 +15,7 @@ import { EditButton, RemoveButton, Row, RowItem, Table, TableBody, TableHeader, 
 function Unidades() {
 
     const [unitsData, setUnitsData] = useState([]);
-    const [removedUnitID, setRemovedUnitID] = useState();
+    const [deletedUnitID, setDeletedUnitID] = useState([]);
 
     useEffect(() => {
         async function handleGetUnits() {
@@ -25,7 +27,7 @@ function Unidades() {
         
         handleGetUnits();
 
-    }, [removedUnitID]);
+    }, [deletedUnitID]);
 
     async function handleRemoveUnit(id) {
 
@@ -41,7 +43,7 @@ function Unidades() {
                         method: 'DELETE'
                     }
             )).then(
-                setRemovedUnitID(id),
+                setDeletedUnitID(id),
                 toast.success('Unidade deletada com sucesso!')
             );
 
@@ -65,9 +67,9 @@ function Unidades() {
                         <Row>
                             <TableHeaderItem>ID</TableHeaderItem>
                             <TableHeaderItem>Apelido</TableHeaderItem>
-                            <TableHeaderItem>Local</TableHeaderItem>
-                            <TableHeaderItem>Marca</TableHeaderItem>
-                            <TableHeaderItem>Modelo</TableHeaderItem>
+                            <TableHeaderItem show={true} >Local</TableHeaderItem>
+                            <TableHeaderItem show={true} >Marca</TableHeaderItem>
+                            <TableHeaderItem show={true} >Modelo</TableHeaderItem>
                         </Row>
                     </TableHeader>
 
@@ -77,9 +79,9 @@ function Unidades() {
                             <Row key={unit.id}>
                                 <RowItem>{unit.id.toString().slice(-4)}</RowItem>
                                 <RowItem>{unit.name}</RowItem>
-                                <RowItem>{unit.location}</RowItem>
-                                <RowItem>{unit.brand}</RowItem>
-                                <RowItem>{unit.model}</RowItem>
+                                <RowItem show={true} >{unit.location}</RowItem>
+                                <RowItem show={true} >{unit.brand}</RowItem>
+                                <RowItem show={true} >{unit.model}</RowItem>
                                 <RowItem><Link to={`/cadastro-unidade/${unit.id}`}><EditButton>Editar</EditButton></Link></RowItem>
                                 <RowItem><RemoveButton onClick={() => handleRemoveUnit(unit.id)}>Remover</RemoveButton></RowItem>
                             </Row>))
