@@ -7,7 +7,8 @@ import { MenuContainer, MenuList, MenuListItem, MenuListItemText } from "./style
 
 import { VscGraphLine } from "react-icons/vsc";
 import { FaSolarPanel } from "react-icons/fa";
-import { FiSettings} from "react-icons/fi";
+import { RiSettings5Fill } from "react-icons/ri";
+import { FaChartPie } from "react-icons/fa";
 
 
 function Menu() {
@@ -44,20 +45,20 @@ function Menu() {
 
                 <Link to='/dashboard' style={{textDecoration:'none'}}>
                     <MenuListItem actual={dashboardColor}>
-                        <VscGraphLine />
+                        <FaChartPie size={22}/>
                         <MenuListItemText>Dashboard</MenuListItemText>
                     </MenuListItem>
                 </Link>
 
                 <Link to='/unidades' style={{textDecoration:'none'}}>
                     <MenuListItem actual={unitsColor}>
-                        <FaSolarPanel />
+                        <FaSolarPanel size={22}/>
                         <MenuListItemText>Unidades</MenuListItemText>
                     </MenuListItem>
                 </Link>
                 <Link to='/geracoes' style={{textDecoration:'none'}}>
                     <MenuListItem actual={generationColor }>
-                        <FiSettings />
+                        <RiSettings5Fill size={22} />
                         <MenuListItemText>Cadastro de Energia Gerada</MenuListItemText>
                     </MenuListItem>
                 </Link>

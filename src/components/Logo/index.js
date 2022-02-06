@@ -1,11 +1,17 @@
 import React from "react";
-import { LogoImage } from "./styles";
+import { LogoContainer, LogoImage } from "./styles";
 
 function Logo({...otherProps}) {
 
-    return <LogoImage 
-        {...otherProps}
-        src={require('../../assets/images/logo.png')}/>
+    return (
+    
+        <LogoContainer>
+            <LogoImage 
+                {...otherProps}
+                src={require('../../assets/images/logo.png')}/>
+        </LogoContainer>
+        
+    );
 };
 
 export default Logo;

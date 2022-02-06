@@ -4,10 +4,12 @@ export const Table = styled.table`
     width: 70vw;
 
     background-color: #ffff;
-    padding: 10px;
     border-radius: 10px;
     text-align: center;
-    margin: 10px 50px 0 50px;
+    margin: 50px;
+    border-collapse: collapse;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.22);
+
     
     font-size: 1vw;
 
@@ -25,12 +27,17 @@ export const Table = styled.table`
 
 export const TableHeader = styled.thead`
     border-bottom: 1px solid lightgray;
+    text-align: center;
+    align-content: center;
+    align-items: center;
 `;
 
-export const TableHeaderItem = styled.th`
-    text-align: center;
+export const TableHeaderItem = styled.td`
+
+    padding: 20px;
     font-weight: bold;
-    padding: 10px;
+    align-content: center;
+    text-align: center;
 
     @media only screen and (max-width: 900px) {
         display: ${(props) => props.show && 'none'}
@@ -64,13 +71,14 @@ export const EditButton = styled.button`
     border: none;
     width: 70%;
     height: 30px;
+    font-weight: bold;
 
     border-radius: 5px;
-    box-shadow: 2px 2px lightgray;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 
     &:hover{
         cursor: pointer;
-        box-shadow: 3px 3px lightgray;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
     };
 
     @media only screen and (max-width: 900px) {
@@ -91,13 +99,14 @@ export const RemoveButton = styled.button`
     width: 70%;
     height: 30px;
     border-radius: 5px;
+    font-weight: bold;
 
-    box-shadow: 2px 2px lightgray;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 
 
     &:hover{
         cursor: pointer;
-        box-shadow: 3px 3px lightgray;
+        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
     };
 
     @media only screen and (max-width: 900px) {
@@ -114,10 +123,18 @@ export const RemoveButton = styled.button`
 
 export const UnitsTitle = styled.h2`
 
-    color: #3a403e;
+    color: #374557;
     font-size: 24px;
     font-weight: bold;
     
     margin: 50px 0 0 50px;
     padding: 10px;
+
+    @media only screen and (max-width: 900px) {
+        margin: 10px 40px 0 40px;
+    };
+
+    @media only screen and (max-width: 600px) {
+        margin: 10px 25px 0 25px;
+    };
 `;

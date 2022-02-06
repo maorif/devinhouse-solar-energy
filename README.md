@@ -4,3 +4,7 @@ Solar Energy
 
 Protótipo de aplicação para gerenciamento de energia desenvolvido utilizando React.
 
+Cadastro para tela de Login:
+    
+    E-mail: dev@devinhouse.com
+    Senha: dev

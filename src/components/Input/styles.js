@@ -4,6 +4,7 @@ export const InputContainer = styled.div`
     width: ${(props) => props.width ? props.width : '40%'};
     display: flex;
     flex-flow: column;
+
     gap: 10px;
 
     @media only screen and (max-width: 600px){
@@ -25,10 +26,6 @@ export const InputText = styled.input`
     padding-left: 5px;
     border: 1px solid gray;
     border-radius: 5px;
-
-    &:focus {
-        border-color: black;
-    };
 `;
 
 export const ErrorMessage = styled.div`

@@ -39,6 +39,22 @@
       "brand": "Samsung",
       "model": "Galaxy",
       "active": true
+    },
+    {
+      "id": "19901737-6fb1-495d-9f81-424bd20894cf",
+      "name": "Quinta",
+      "location": "Criciuma - SC",
+      "brand": "Apple",
+      "model": "Iphone X",
+      "active": false
+    },
+    {
+      "id": "4f84aa71-b2b1-4234-831f-9abee41657df",
+      "name": "Sexta",
+      "location": "Salvador - BA",
+      "brand": "Microsoft",
+      "model": "200w",
+      "active": true
     }
   ],
   "generation": [
@@ -300,6 +316,34 @@
       "month": "9",
       "generation": "44",
       "id": 37
+    },
+    {
+      "unit": "3e3df415-98da-4789-b4e0-a13a6833b365",
+      "year": "2020",
+      "month": "6",
+      "generation": "31",
+      "id": 38
+    },
+    {
+      "unit": "6bdf9684-cf19-461f-b754-dc51e4eac960",
+      "year": "2020",
+      "month": "8",
+      "generation": "25",
+      "id": 39
+    },
+    {
+      "unit": "804b332b-9b53-4b0e-bb2b-3b7bc59a0ada",
+      "year": "2020",
+      "month": "9",
+      "generation": "28",
+      "id": 40
+    },
+    {
+      "unit": "c97f0390-abfc-426c-b6b2-63ea67752733",
+      "year": "2020",
+      "month": "7",
+      "generation": "27",
+      "id": 41
     }
   ]
 }

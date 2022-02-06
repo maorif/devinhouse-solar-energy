@@ -78,24 +78,30 @@ export const CardData = styled.p`
 export const GraphContainer = styled.div`
 
     width: 65%;
-    margin: 50px auto;
+    margin: 20px auto;
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 20px;
 
     border-radius: 10px;
     padding: 20px;
 
     background-color: #ffff;
+    border: 1px solid lightgray;
+
 `;
 
 export const GraphTitle = styled.h2`
 
-    font-size: 20px;
-    color: gray;
+    font-size: 24px;
+    color: #374557;
     font-weight: bold;
+    
+    @media only screen and (max-width: 600px) {
+        font-size: 3vw;
+    };
 `;
 
 export const CardYearContainer = styled.div`
@@ -110,11 +116,12 @@ export const CardYearContainer = styled.div`
 export const CardYear = styled.div`
 
     width: 20%;
+    padding: 1px;
     font-size: auto;
     text-align: center;
     border: 1px solid;
-    border-color: ${(props) => props.selected ? 'blue' : 'gray'};
-    color: ${(props) => props.selected ? 'blue' : 'gray'};
+    border-color: ${(props) => props.selected ? 'blue' : '#374557'};
+    color: ${(props) => props.selected ? 'blue' : '#374557'};
 
     border-radius: 5px;
 

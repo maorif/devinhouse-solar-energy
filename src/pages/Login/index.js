@@ -9,6 +9,11 @@ import LoginButton from "../../components/LoginButton";
 
 import { Greet, LoginForm, LoginFormContainer, LoginImage, LogoForLogin } from "./styles";
 
+import { AiOutlineMail } from 'react-icons/ai';
+import { BiLockAlt } from 'react-icons/bi';
+
+import InputLogin from "../../components/InputLogin";
+
 function Login() {
 
     const [email, setEmail] = useState('');
@@ -47,11 +52,12 @@ function Login() {
                 }
             
             catch (error) {
-                toast.error('Problema no servidor');
+                toast.error('E-mail incorreto!');
             };
         };
     };
     
+
     return (
         <>
 
@@ -61,18 +67,20 @@ function Login() {
             <LoginFormContainer>
 
                 <LogoForLogin src={require('../../assets/images/logo.png')} />
-                <Greet>Bem vindo</Greet>
+                <Greet>Seja bem vindo</Greet>
                 
                 <LoginForm onSubmit={handleSubmit}>
 
-                    <Input
+                    <InputLogin
+                        icon={<AiOutlineMail size={22} color="gray" style={{marginLeft: "10px"}}/>}
                         type='email'
                         width='60%'
                         errorText={errorEmail}
                         placeholder={'E-mail'}
                         onChange={(event) => setEmail(event.target.value)}/>
 
-                    <Input
+                    <InputLogin
+                        icon={<BiLockAlt size={22} color="gray" style={{marginLeft: "10px"}}/>}
                         type='password'
                         width='60%'
                         errorText={errorPassword}

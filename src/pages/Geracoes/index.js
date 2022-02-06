@@ -11,6 +11,7 @@ import Form from "../../components/Form";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import Select from "../../components/Select";
+import DatePickerSelect from "../../components/DatePickerSelect";
 
 function Geracoes() {
 
@@ -102,8 +103,9 @@ function Geracoes() {
                             onChange={(event) => setOptionUnit(event.target.value)}
                             error={errors.optionUnit}
                             errorText={'Selecione uma unidade.'}/>
-
-                    <DatePicker
+                    
+                    <DatePickerSelect
+                        label={'Mês-Ano'}
                         selected={date}
                         onChange={(date) => getDate(date)}
                         className="date-picker"
@@ -111,7 +113,7 @@ function Geracoes() {
                         showMonthYearPicker />
 
                     <Input 
-                        label={'Total KW gerados'}
+                        label={'Total kW gerados'}
                         type='number'
                         value={totalWatts}
                         onChange={(event) => setTotalWatss(event.target.value)}

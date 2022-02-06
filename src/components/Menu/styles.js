@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const MenuContainer = styled.nav`
     height: 100vh;
-    width: 17vw;
+    width: 15vw;
 
     display: flex;
     align-items: center;
@@ -10,8 +10,7 @@ export const MenuContainer = styled.nav`
     gap: 15px;
 
     @media only screen and (max-width: 600px) {
-        padding: 5vw;
-        margin-top: 10vw;
+        margin-top: 120px;
     };
 `;
 export const MenuList = styled.ul`
@@ -21,7 +20,7 @@ export const MenuList = styled.ul`
     gap: 15px;
 
     list-style: none;
-    width: 65%;
+    width: 80%;
 `;
 
 export const MenuListItem = styled.li`
@@ -37,21 +36,27 @@ export const MenuListItem = styled.li`
     border-radius: 10px;
     padding: 5px 5px 5px 10px;
     
-    font-size: 100%;
+    font-size: 95%;
     font-weight: bolder;
-    background: ${(props) => props.actual ? '#4CBC9A' : '#ffff'};
+    background: ${(props) => props.actual ? '#55d4b2' : '#ffff'};
     color: ${(props) => props.actual ? '#ffff' : 'gray'};
-    box-shadow: 1px 1px lightgray;
+    box-shadow: ${(props) => props.actual ? '3px 3px 3px rgba(0, 0, 0, 0.18)' : 'none'};
 
     &:hover{
         cursor: pointer;
         background: #55d4b2;
         color: #ffff;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.18);
     };
 
     @media only screen and (max-width: 900px) {
         justify-content: center;
         font-size: 3vw;
+    };
+
+    @media only screen and (max-width: 600px) {
+        font-size: 5vw;
+        padding: 3px;
     };
 `;
 
@@ -65,6 +70,5 @@ export const MenuListItemText = styled.p`
 
     @media only screen and (max-width: 900px) {
         display: none;
-        width: 0%;
     };
 `;

@@ -1,9 +1,14 @@
 import React from "react";
-import { LButton } from "./styles";
+import { LButton, LButtonContainer } from "./styles";
 
 function LoginButton({...otherProps}) {
 
-    return <LButton {...otherProps}></LButton>;
+    return (
+    
+        <LButtonContainer>
+            <LButton {...otherProps}></LButton>
+        </LButtonContainer>
+    );
 };
 
 export default LoginButton;

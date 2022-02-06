@@ -114,7 +114,7 @@ function Dashboard() {
             legend: {
                 position: 'top',
             }
-        },
+        }
     };
 
     const graphData = {
@@ -125,6 +125,7 @@ function Dashboard() {
                 data: monthlyGen,
                 borderColor: 'rgb(52, 146, 235)',
                 backgroundColor: 'rgba(52, 146, 235, 0.5)',
+                tension: .33
             },
         ],
       };

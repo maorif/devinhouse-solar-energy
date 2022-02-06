@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const NewUnitTitle = styled.h2`
-    color: gray;
+    color: #374557;
     font-size: 24px;
     font-weight: bold;
     

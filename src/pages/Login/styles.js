@@ -39,14 +39,24 @@ export const LoginForm = styled.form`
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    align-content: center;
     row-gap: 18px;
 `;
 
 export const Greet = styled.h1`
-    color: gray;
-    font-size: 3vw;
+    color: #374557;
+    font-size: 24px;
+    font-weight: bold;
+
+    @media only screen and (max-width: 1000px) {
+        font-size: 2vw;
+    };
 `;
 
 export const LogoForLogin = styled.img`
     width: 20vw;
+
+    @media only screen and (max-width: 600px) {
+        display: 40vw;
+    };
 `;
